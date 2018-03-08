@@ -58,7 +58,7 @@ node('master') {
         withMaven(maven: 'Maven 3') {
             dir('app') {
                 releasedVersion = getReleasedVersion()
-                release credentials: 'github', email: 'test@automatingguy.com'
+                release credentials: 'github', email: 'dwai@cloudgear.io'
                 dockerCmd "build --tag automatingguy/sparktodo:${releasedVersion} ."
             }
         }
